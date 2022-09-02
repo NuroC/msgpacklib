@@ -1,7 +1,3 @@
-a simple msgpack implementation
-
-usage:
-
 receive packets:
 
 ```js
