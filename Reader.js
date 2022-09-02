@@ -47,11 +47,6 @@ class Reader {
                 json = {};
             for (let i = 0; i < length; i++) json[this.readString()] = this.readData();
             return json;
-        } else {
-            console.log('idk');
-            console.log(this.offset);
-            console.log(type);
-            console.log(new Uint8Array(this.buffer));
         }
     }
 }
