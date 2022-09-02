@@ -26,3 +26,5 @@ onmessage = function (e) {
     return packet;
 }
 ```
+
+made for moomoo.io so idk if u wanna use it in other stuff
