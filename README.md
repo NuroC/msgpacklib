@@ -1,9 +1,14 @@
+```js
+const Writer = msgpacklib.writer;
+const Reader = msgpacklib.reader;
+```
+
 receive packets:
 
 ```js
 onmessage = function (e) {
     let data = e.data;
-    let packet = new msgpacklib.reader(data);
+    let packet = new Reader(data);
     let [packetID, info] = packet.readData();
 }
 ```
@@ -11,7 +16,7 @@ onmessage = function (e) {
  
  ```js
  function send(packetID, ...args) {
-    let binData = new msgpacklib.Writer(1, args).setString(packetID).setInt(144 + args.length, !0);
+    let binData = new Writer(1, args).setString(packetID).setInt(144 + args.length, !0);
     args && args.forEach(e => {
         switch (typeof e) {
             case 'number':
